@@ -1949,7 +1949,11 @@ module "cert_manager" {
   postrender = try(var.cert_manager.postrender, [])
   set = concat([
     {
-      name  = "installCRDs"
+      name  = "crds.enabled"
+      value = true
+    },
+    {
+      name  = "crds.enabled"
       value = true
     },
     {
