@@ -1193,6 +1193,7 @@ data "aws_iam_policy_document" "aws_load_balancer_controller" {
       "ec2:DescribeAddresses",
       "ec2:DescribeAvailabilityZones",
       "ec2:DescribeInternetGateways",
+      "ec2:DescribeRouteTables",
       "ec2:DescribeVpcs",
       "ec2:DescribeVpcPeeringConnections",
       "ec2:DescribeSubnets",
@@ -1953,7 +1954,7 @@ module "cert_manager" {
       value = true
     },
     {
-      name  = "crds.enabled"
+      name  = "crds.keep"
       value = true
     },
     {
