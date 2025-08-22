@@ -1953,7 +1953,7 @@ module "cert_manager" {
       value = true
     },
     {
-      name  = "crds.enabled"
+      name  = "crds.keep"
       value = true
     },
     {
