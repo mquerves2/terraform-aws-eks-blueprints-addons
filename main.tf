@@ -18,7 +18,7 @@ resource "time_sleep" "this" {
 locals {
   account_id = data.aws_caller_identity.current.account_id
   partition  = data.aws_partition.current.partition
-  region     = data.aws_region.current.name
+  region     = data.aws_region.current.region
 
   # Threads the sleep resource into the module to make the dependency
   cluster_endpoint  = time_sleep.this.triggers["cluster_endpoint"]
@@ -2948,6 +2948,7 @@ data "aws_iam_policy_document" "karpenter" {
         "iam:GetInstanceProfile",
         "iam:RemoveRoleFromInstanceProfile",
         "iam:TagInstanceProfile",
+        "iam:ListInstanceProfiles",
       ]
       resources = ["*"]
     }
